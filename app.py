@@ -6,6 +6,7 @@ from os.path import join, dirname
 from dotenv import load_dotenv
 
 app = Flask(__name__)
+app.config.from_object(__name__)
 
 load_dotenv(join(dirname(__file__), '.env'))
 client_id = os.environ.get("OAUTH_CLIENT_ID")
